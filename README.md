@@ -33,13 +33,25 @@ La visualisation pourra être ajoutée lors de l’atelier 3 (Metabase ou Notebo
 https://drive.google.com/drive/u/0/folders/1gLSw0RLjBbtaNy0dgnGQDAZOHIgCe-HH  (2024)
 
 ### Présentation du dataset
+Chaque ligne représente un participant dans une partie, avec des informations couvrant :
+    -l’identifiant du match (ex. LOLTMNT02_193448)
+    -le statut de la partie (ex. complete)
+    -la ligue ou compétition (ex. KeSPA)
+    -l’année et la date du match
+    -l’équipe et le côté (Blue / Red)
+    -le rôle du joueur (mid, top, jungle, etc.)
+    -le nom du joueur (ex. ShowMaker)
+    -le champion joué
+
 Le dataset contient des statistiques in‑game détaillées :
 - kills, deaths, assists  
 - gold gagné  
 - dégâts infligés  
 - objectifs pris (tours, dragons, barons)  
-- champion joué, rôle, lane  
+- champion joué, rôle, lane
 - statistiques d’équipe (victoire, kills totaux, objectifs)
+- etc...
+Le dataset est très volumineux.
 
 ### Équipe
 Ndeye Absa FALL
