@@ -1,30 +1,21 @@
 # Atelier1_entrepot_de_donnees
 
+### Équipe
+Ndeye Absa FALL
+Cyrille TCHINDA
+
 ## Étape 1 – Jeu de données
-
-Nous avons choisi un jeu de données de parties classées de **League of Legends**.  
-Ce dataset contient plus de 100 000 parties, avec des statistiques in‑game détaillées pour chaque joueur et chaque équipe :
-
-- kills, deaths, assists  
-- gold gagné  
-- dégâts infligés  
-- objectifs pris (tours, dragons, barons)  
-- champion joué  
-- rôle et lane  
+Dataset: 2024 LoL Esports Match Data
+Source: https://drive.google.com/drive/u/0/folders/1gLSw0RLjBbtaNy0dgnGQDAZOHIgCe-HH  (2024)
 
 ## Étape 2 – Architecture technique
 
 Nous avons mis en place une architecture décisionnelle ELT basée sur Docker Compose.
 
-### Extract / Load
-- **MySQL** est utilisé pour stocker les données brutes du jeu de données League of Legends.
-- Les fichiers CSV seront importés dans des tables MySQL via phpMyAdmin.
-
-### Transformation
-Nous utilisons **Jupyter Notebook** pour réaliser les transformations :
-- nettoyage des données brutes,
-- séparation en tables normalisées (match, team_stats, player_stats),
-- chargement dans un schéma final.
+- Base de données : PostgreSQL 15
+- Stockage brut : table raw_lol_esports
+- Transformation : requêtes SQL
+- Modèle relationnel normalisé
 
 ### Visualisation
 La visualisation pourra être ajoutée lors de l’atelier 3 (Metabase ou Notebook).
@@ -33,27 +24,22 @@ La visualisation pourra être ajoutée lors de l’atelier 3 (Metabase ou Notebo
 https://drive.google.com/drive/u/0/folders/1gLSw0RLjBbtaNy0dgnGQDAZOHIgCe-HH  (2024)
 
 ### Présentation du dataset
-Chaque ligne représente un participant dans une partie, avec des informations couvrant :
+Nous avons choisi un jeu de données de parties classées de **League of Legends**.  
+Le dataset contient 122 388 lignes correspondant aux statistiques détaillées 
+des matchs e-sport League of Legends 2023-2024.
 
-   - l’identifiant du match (ex. LOLTMNT02_193448)
-   - le statut de la partie (ex. complete)
-   - la ligue ou compétition (ex. KeSPA)
-   - l’année et la date du match
-   - l’équipe et le côté (Blue / Red)
-   - le rôle du joueur (mid, top, jungle, etc.)
-   - le nom du joueur (ex. ShowMaker)
-   - le champion joué
+Chaque ligne représente un joueur dans une partie.
+Les principales variables utilisées :
+- gameid (identifiant du match)
+- league
+- year
+- teamname
+- playername
+- champion
+- kills, deaths, assists
+- totalgold
+- total_cs
+- visionscore
 
-Le dataset contient des statistiques in‑game détaillées :
-- kills, deaths, assists  
-- gold gagné  
-- dégâts infligés  
-- objectifs pris (tours, dragons, barons)  
-- champion joué, rôle, lane
-- statistiques d’équipe (victoire, kills totaux, objectifs)
-- etc...
-Le dataset est très volumineux.
-
-### Équipe
-Ndeye Absa FALL
-Cyrill TCHINDA
+Après nettoyage (suppression des lignes sans playerid),
+101 500 participations valides ont été intégrées dans le modèle relationnel.
