@@ -42,7 +42,7 @@ Chaque ligne représente un participant dans une partie, avec des informations c
     -le rôle du joueur (mid, top, jungle, etc.)
     -le nom du joueur (ex. ShowMaker)
     -le champion joué
-
+.
 Le dataset contient des statistiques in‑game détaillées :
 - kills, deaths, assists  
 - gold gagné  
