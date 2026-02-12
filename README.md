@@ -34,15 +34,16 @@ https://drive.google.com/drive/u/0/folders/1gLSw0RLjBbtaNy0dgnGQDAZOHIgCe-HH  (2
 
 ### Présentation du dataset
 Chaque ligne représente un participant dans une partie, avec des informations couvrant :
-    -l’identifiant du match (ex. LOLTMNT02_193448)
-    -le statut de la partie (ex. complete)
-    -la ligue ou compétition (ex. KeSPA)
-    -l’année et la date du match
-    -l’équipe et le côté (Blue / Red)
-    -le rôle du joueur (mid, top, jungle, etc.)
-    -le nom du joueur (ex. ShowMaker)
-    -le champion joué
-.
+
+   - l’identifiant du match (ex. LOLTMNT02_193448)
+   - le statut de la partie (ex. complete)
+   - la ligue ou compétition (ex. KeSPA)
+   - l’année et la date du match
+   - l’équipe et le côté (Blue / Red)
+   - le rôle du joueur (mid, top, jungle, etc.)
+   - le nom du joueur (ex. ShowMaker)
+   - le champion joué
+
 Le dataset contient des statistiques in‑game détaillées :
 - kills, deaths, assists  
 - gold gagné  
