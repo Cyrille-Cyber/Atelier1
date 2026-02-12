@@ -43,3 +43,7 @@ Les principales variables utilisées :
 
 Après nettoyage (suppression des lignes sans playerid),
 101 500 participations valides ont été intégrées dans le modèle relationnel.
+
+### Modèle relationnel
+Le schéma ci-dessous représente le modèle relationnel normalisé utilisé pour l'analyse des données League of Legends
+<img width="824" height="705" alt="ERD_LoL_Atelier1" src="https://github.com/user-attachments/assets/cf3434df-2e46-4da8-8bf2-920f66c61771" />
