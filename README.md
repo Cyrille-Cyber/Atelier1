@@ -49,6 +49,14 @@ choisi était très lourd c'est pour celà on a pris les données principales se
 <img width="2048" height="1236" alt="image" src="https://github.com/user-attachments/assets/e589f8cd-14bc-4382-beed-10572e366699" />
 
 
+# Atelier2_entrepot_de_donnees
+
+## Étape 1 – Modélisation dimensionnelle
+
+Voici notre schéma dimensionnel 
+
+![alt text](image.png)
+
 
 ### Équipe
 Ndeye Absa FALL
