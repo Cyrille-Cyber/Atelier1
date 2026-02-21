@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_lol
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lol_raw_db
+    ports:
+      - "3310:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  jupyter:
+    image: jupyter/scipy-notebook
+    container_name: jupyter_lol
+    restart: always
+    ports:
+      - "8888:8888"
+    environment:
+      JUPYTER_TOKEN: "password"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+
+volumes:
+  mysql_data:
