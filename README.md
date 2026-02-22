@@ -58,6 +58,80 @@ Voici notre schéma dimensionnel
 ![alt text](image.png)
 
 
+# Atelier3_entrepot_de_donnees
+## Étape 3 — Centralisation des logs
+
+Pour centraliser les logs de tous les services , nous avons intégré Dozzle, une interface légère permettant de visualiser en temps réel les logs Docker.
+
+### Intégration dans docker-compose
+
+```yaml
+dozzle:
+  image: amir20/dozzle:latest
+  container_name: dozzle
+  ports:
+    - "9999:8080"
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+  restart: always
+
+/Exemple d’erreur visualisée/
+
+Pour tester la centralisation, nous avons volontairement provoqué une erreur de connexion MySQL depuis Jupyter :
+from sqlalchemy import create_engine
+import pandas as pd
+
+engine_test = create_engine("mysql+pymysql://root:FAUX_MDP@mysql:3306/lol_dw_db")
+pd.read_sql("SHOW TABLES;", engine_test)
+
+![alt text](image-1.png)
+
+
+## Étape 4 — Documentation
+
+### Prérequis
+
+- Docker
+- Docker Compose
+- Python 3.10
+- pip + packages :
+  - pandas
+  - sqlalchemy
+  - pymysql
+  - matplotlib
+  
+
+### Lancement complet de la stack
+Apres integration de DOZZLE dans le conteneur :
+
+```bash
+docker compose down 
+docker compose up -d
+
+ensuite on y accede via le navigateur en tapant : http://localhost:9999/
+
+### Valeurs configurables
+Dans docker-compose.yml :
+
+Ports MySQL : 3310:3306
+
+Ports Jupyter : 8888:8888
+
+Ports Dozzle : 9999:8080
+
+Mot de passe MySQL : root
+
+Noms des bases : lol_raw_db, lol_dw_db, lol_model_db
+
+### les points de vigilance pour l'ajout de service
+-Toujours exposer les ports nécessaires
+
+-Toujours monter /var/run/docker.sock pour les outils de logs
+
+-Vérifier les dépendances (depends_on)
+
+-Redémarrer la stack après modification 
+
 ### Équipe
 Ndeye Absa FALL
 Cyrill TCHINDA

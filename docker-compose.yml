@@ -13,6 +13,15 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    ports:
+      - "9999:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+
   jupyter:
     image: jupyter/scipy-notebook
     container_name: jupyter_lol
@@ -27,3 +36,5 @@ services:
 
 volumes:
   mysql_data:
+
+  
